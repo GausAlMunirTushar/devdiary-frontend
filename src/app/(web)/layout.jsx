@@ -1,10 +1,11 @@
 import WebHeader from "@/components/layouts/WebHeader";
 
-const WebLayout = () => {
+const WebLayout = ({ children }) => {
 	return (
-		<div>
+		<main>
 			<WebHeader />
-		</div>
+			<div className="max-w-5xl mx-auto">{children}</div>
+		</main>
 	);
 };
 

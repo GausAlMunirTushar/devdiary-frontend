@@ -1,7 +1,32 @@
-import React from "react";
+import Link from "next/link";
+import Logo from "../shared/Logo";
+import Button from "../ui/button";
 
 const WebHeader = () => {
-	return <div className="bg-green-500">WebHeader</div>;
+	return (
+		<header className="border-b border-gray-200 py-4">
+			<nav className="max-w-5xl mx-auto flex justify-between items-center">
+				<Logo />
+				<ul className="flex gap-5">
+					<li>
+						<Link href="/">Home</Link>
+					</li>
+					<li>
+						<Link href="/blogs">Blogs</Link>
+					</li>
+					<li>
+						<Link href="/about">About</Link>
+					</li>
+				</ul>
+				<div className="space-x-4">
+					<Link href="/login">Login</Link>
+					<Button className="bg-primary text-white py-2 px-4 rounded-full">
+						Register
+					</Button>
+				</div>
+			</nav>
+		</header>
+	);
 };
 
 export default WebHeader;

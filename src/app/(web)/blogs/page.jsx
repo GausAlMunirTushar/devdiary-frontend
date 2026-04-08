@@ -3,7 +3,11 @@ export const metadata = {
 };
 
 const BlogPage = () => {
-	return <div></div>;
+	return (
+		<div>
+			<h1>BLog</h1>
+		</div>
+	);
 };
 
 export default BlogPage;
