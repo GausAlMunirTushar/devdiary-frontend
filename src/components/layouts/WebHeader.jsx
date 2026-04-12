@@ -20,9 +20,11 @@ const WebHeader = () => {
 				</ul>
 				<div className="space-x-4">
 					<Link href="/login">Login</Link>
-					<Button variant="primary" size="sm">
-						Register
-					</Button>
+					<Link href="/register">
+						<Button variant="primary" size="sm">
+							Register
+						</Button>
+					</Link>
 				</div>
 			</nav>
 		</header>
