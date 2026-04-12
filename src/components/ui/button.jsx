@@ -11,6 +11,7 @@ const Button = ({
 	const variants = {
 		primary: 'bg-primary text-white hover:bg-primary/90 focus:ring-primary',
 		secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-400',
+		danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500',
 	};
 	
 	const sizes = {
