@@ -18,10 +18,10 @@ const Hero = () => {
 					builders.
 				</p>
 				<div className="flex gap-4 items-center mt-8">
-					<Button className="bg-primary text-white px-4 py-2 rounded-full text-lg flex items-center gap-3">
+					<Button variant="primary" size="lg" className="flex items-center gap-3">
 						<span>Explore Blogs</span> <FaArrowRight size={16} />
 					</Button>
-					<Button className="border border-gray-200 py-2 px-4 rounded-full">
+					<Button variant="secondary" size="lg">
 						How it Works
 					</Button>
 				</div>

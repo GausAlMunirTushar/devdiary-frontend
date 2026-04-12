@@ -20,7 +20,7 @@ const WebHeader = () => {
 				</ul>
 				<div className="space-x-4">
 					<Link href="/login">Login</Link>
-					<Button className="bg-primary text-white py-2 px-4 rounded-full">
+					<Button variant="primary" size="sm">
 						Register
 					</Button>
 				</div>

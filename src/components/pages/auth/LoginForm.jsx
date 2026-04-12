@@ -22,7 +22,7 @@ const LoginForm = () => {
 					className={"border border-gray-200 py-2 px-4 rounded-md"}
 				/>
 			</div>
-			<Button className="bg-primary text-white w-full py-2 px-4 rounded-md my-2">
+			<Button variant="primary" size="md" className="w-full my-2">
 				Login
 			</Button>
 		</div>
