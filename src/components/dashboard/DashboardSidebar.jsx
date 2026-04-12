@@ -1,17 +1,29 @@
+"use client";
 import Link from "next/link";
-import { FaHome, FaFileAlt, FaUser, FaCog, FaSignOutAlt } from "react-icons/fa";
-import { IoMdAnalytics } from "react-icons/io";
+import { usePathname } from "next/navigation";
+import { FaHome, FaFileAlt, FaUsers, FaUser, FaCog, FaSignOutAlt, FaTags } from "react-icons/fa";
 import Logo from "../shared/Logo";
 
 const menuItems = [
 	{ icon: FaHome, label: "Overview", href: "/dashboard" },
 	{ icon: FaFileAlt, label: "My Posts", href: "/dashboard/posts" },
-	{ icon: IoMdAnalytics, label: "Analytics", href: "/dashboard/analytics" },
+	{ icon: FaTags, label: "Categories", href: "/dashboard/categories" },
+	{ icon: FaUsers, label: "Users", href: "/dashboard/users" },
 	{ icon: FaUser, label: "Profile", href: "/dashboard/profile" },
 	{ icon: FaCog, label: "Settings", href: "/dashboard/settings" },
 ];
 
 const DashboardSidebar = ({ className = "", isOpen = true, onClose }) => {
+	const pathname = usePathname();
+
+	const isActive = (href) => {
+		if (href === "/dashboard") {
+			return pathname === "/dashboard";
+		}
+		const lastSegment = href.split("/").pop();
+		return pathname?.endsWith(lastSegment) || pathname?.endsWith(lastSegment + "/");
+	};
+
 	return (
 		<>
 			{isOpen && (
@@ -35,7 +47,11 @@ const DashboardSidebar = ({ className = "", isOpen = true, onClose }) => {
 						<Link
 							key={item.href}
 							href={item.href}
-							className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+							className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+								isActive(item.href)
+									? "bg-primary/10 text-primary font-medium"
+									: "text-gray-700 hover:bg-gray-100"
+							}`}
 						>
 							<item.icon size={20} />
 							<span>{item.label}</span>
