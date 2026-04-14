@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import useSWRInfinite from "swr/infinite";
+import { useSWRInfinite } from "swr/infinite";
 
 // Base API URL from environment variables
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
